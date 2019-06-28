@@ -64,6 +64,14 @@ cypress/screenshots/*
 !cypress/screenshots/champion
 ```
 
+Add to your `cypress.json` file
+
+```json
+{
+  "screenshotsFolder": "cypress/screenshots/challenger"
+}
+```
+
 Then when visiting a place - instead of using the standard `cy.visit`...
 
 **Note:** this takes two snapshot's of the app in the default viewports - `iphone-6` and `macbook-13`.
