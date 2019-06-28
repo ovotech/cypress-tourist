@@ -1,0 +1,56 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:8.10.0
+
+npmrc: &npmrc
+  run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+jobs:
+  test:
+    <<: *defaults  
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v{{ .Environment.DEPENDENCY_CACHE_VERSION }}-dependencies-{{ checksum "package.json" }}
+          - v{{ .Environment.DEPENDENCY_CACHE_VERSION }}-dependencies-
+      - run: npm install
+      - run:
+          name: Run pre-commit actions
+          command: npm run pre-commit
+      - save_cache:
+          paths:
+            - node_modules
+          key: v{{ .Environment.DEPENDENCY_CACHE_VERSION }}-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          <<: *npmrc  
+      - run:
+          name: Publish package
+          command: npm publish
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
