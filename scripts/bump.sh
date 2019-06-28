@@ -31,5 +31,9 @@ echo ">> Successfully bumped and tagged to version $VERSION"
 echo ">> Releasing"
 git push --tags
 
-echo "Done!"
+
+echo ">> Attempt to update version on master"
+git push origin master 2>&1
+
+echo ">> Done!"
 exit 0
