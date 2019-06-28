@@ -8,14 +8,18 @@ const { notEmpty } = require('./utils/notEmpty')
 const { getUnique } = require('./utils/getUnique')
 const { hyphenList } = require('./utils/hyphenList')
 const { passesVisualRegression } = require('./utils/passesVisualRegression')
+const { filterFailed } = require('./utils/passesVisualRegression')
 
 const { FILE_EXT, PATH_CHALLENGER, PATH_CHAMPION, PATH_DIFF } = require('./config')
 const { CHALLENGER, CHAMPION } = require('./variables.json')
 
 const runVisualRegression = async () => {
   try {
-    const champions = await fg(path.join(PATH_CHAMPION, '**', `*.${FILE_EXT}`))
-    const challengers = await fg(path.join(PATH_CHALLENGER, '**', `*.${FILE_EXT}`))
+    const unFilteredChampions = await fg(path.join(PATH_CHAMPION, '**', `*.${FILE_EXT}`))
+    const unFilteredChallengers = await fg(path.join(PATH_CHALLENGER, '**', `*.${FILE_EXT}`))
+
+    const champions = filterFailed(unFilteredChampions)
+    const challengers = filterFailed(unFilteredChallengers)
 
     const noChallengers = getUnique(champions, challengers)
     const newChallengers = getUnique(challengers, champions)
