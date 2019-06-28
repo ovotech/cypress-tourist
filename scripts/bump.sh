@@ -29,7 +29,7 @@ fi
 echo ">> Successfully bumped and tagged to version $VERSION"
 
 echo ">> Releasing"
-git push --tags
+git push --tags --no-verify
 
 
 echo ">> Attempt to update version on master"
