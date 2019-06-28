@@ -5,9 +5,6 @@ defaults: &defaults
   docker:
     - image: circleci/node:8.10.0
 
-npmrc: &npmrc
-  run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-
 jobs:
   test:
     <<: *defaults  
@@ -36,7 +33,7 @@ jobs:
           at: ~/repo
       - run:
           name: Authenticate with registry
-          <<: *npmrc  
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
       - run:
           name: Publish package
           command: npm publish
