@@ -1,6 +1,6 @@
 {
   "name": "@ovotech/cypress-tourist",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Visit a place, take a picture. Compare.",
   "main": "src/index.js",
   "files": [
