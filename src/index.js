@@ -1,9 +1,9 @@
-import { WAIT_PERIOD } from './variables.json'
+const { WAIT_PERIOD } = require('./variables.json')
 
 /* eslint-disable no-undef */
 const sizes = ['iphone-6', 'macbook-13']
 
-const visitAndSnap = url => {
+exports.visitAndSnap = url => {
   cy.visit(url)
 
   sizes.forEach(size => {
@@ -15,12 +15,9 @@ const visitAndSnap = url => {
   })
 }
 
-const snap = (uniqueName) => {
+exports.snap = (uniqueName) => {
   const fileName = uniqueName && 'uniqueName'.replace(/(http(s)*:\/\/)|\W/g, '_')
 
   cy.wait(WAIT_PERIOD)
   cy.screenshot(fileName)
 }
-
-exports.snap = snap
-exports.visitAndSnap = visitAndSnap
