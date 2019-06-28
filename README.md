@@ -118,6 +118,14 @@ npm install
 npm run lint
 ```
 
+## Deploy
+
+See [semver] for versioning incements.
+
+```sh
+npm run bump [major|minor|patch]
+```
+
 ## Todo
 
 - [ ] Initialize with options such as custom device viewports, or a different wait time.
@@ -138,3 +146,4 @@ Contributions and PR's welcome.
 [blink-diff]: https://github.com/yahoo/blink-diff
 [cypress]: https://www.cypress.io/
 [pre-push hook]: https://github.com/typicode/husky
+[semver]: https://semver.org/
