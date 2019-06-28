@@ -1,0 +1,44 @@
+{
+  "name": "cypress-tourist",
+  "version": "0.0.4",
+  "description": "Visit a place, take a picture. Compare.",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "bin"
+  ],
+  "bin": {
+    "cypress-tourist": "./bin/index.js"
+  },
+  "scripts": {
+    "lint": "standard {src,bin}/**/*.js",
+    "pre-commit": "npm run lint"
+  },
+  "types": "src/index.d.ts",
+  "keywords": [
+    "cypress",
+    "visual regression",
+    "blink-diff",
+    "testing",
+    "e2e"
+  ],
+  "author": "Oliver Smit <github.com/olmesm>",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "husky": "^2.7.0",
+    "standard": "^12.0.1"
+  },
+  "peerDependencies": {
+    "cypress": "^3.3.1"
+  },
+  "dependencies": {
+    "blink-diff": "^1.0.13",
+    "chalk": "^2.4.2",
+    "cp-file": "^7.0.0",
+    "fast-glob": "^3.0.2",
+    "rimraf": "^2.6.3"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}
