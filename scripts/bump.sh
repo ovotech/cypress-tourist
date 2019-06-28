@@ -33,7 +33,7 @@ git push --tags
 
 
 echo ">> Attempt to update version on master"
-git push origin master 2>&1
+git push origin master --no-verify 2>&1
 
 echo ">> Done!"
 exit 0
