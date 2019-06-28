@@ -18,7 +18,7 @@ See README.md for more information.
     exit 1
 fi
 
-echo ">> Attempting npm version bump..."
+echo ">> Tagging..."
 VERSION=$(npm version "$SEMVER_VERSION")
 
 if [ -z "$VERSION" ]; then
@@ -26,10 +26,10 @@ if [ -z "$VERSION" ]; then
     exit 1
 fi 
 
-echo ">> Bumped to version $VERSION"
+echo ">> Successfully bumped and tagged to version $VERSION"
 
-echo ">> Tagging and releasing"
-git tag "$VERSION" && git push --tags
+echo ">> Releasing"
+git push --tags
 
 echo "Done!"
 exit 0
