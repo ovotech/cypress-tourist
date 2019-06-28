@@ -39,10 +39,10 @@ Consider outputting the `diff` directory as build assets.
 Assuming you already have [cypress] installed and setup. 
 
 ```sh
-npm install --dev cypress-tourist
+npm install --dev @ovotech/cypress-tourist
 
 # Alternatively if using yarn
-yarn add dev cypress-tourist
+yarn add dev @ovotech/cypress-tourist
 ```
 
 Add the script to your `package.json`
@@ -123,6 +123,7 @@ npm run lint
 See [semver] for versioning incements.
 
 ```sh
+# Commit all changes and then on the master branch
 npm run bump [major|minor|patch]
 ```
 
