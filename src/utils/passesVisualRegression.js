@@ -3,7 +3,7 @@ const path = require('path')
 const BlinkDiff = require('blink-diff')
 
 const { THRESHOLD_PERCENT } = require('../config')
-const { CHALLENGER, CHAMPION, DIFF } = require('../names.json')
+const { CHALLENGER, CHAMPION, DIFF } = require('../variables.json')
 
 const { sep } = path
 const championRegex = new RegExp(`${CHAMPION}.*${sep}`)

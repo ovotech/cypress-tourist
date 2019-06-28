@@ -69,7 +69,7 @@ Then when visiting a place - instead of using the standard `cy.visit`...
 **Note:** this takes two snapshot's of the app in the default viewports - `iphone-6` and `macbook-13`.
 
 ```js
-import { visitAndSnap } from 'cypress-tourist'
+import { visitAndSnap } from '@ovotech/cypress-tourist'
 
 describe('Visual Regression', () => {
   it('captures a screenshot', () => {
@@ -83,7 +83,7 @@ Alternatively if snapping a state change in the app...
 **Note:** this takes a snapshot of the app in the current viewport and state only.
 
 ```js
-import { snap } from 'cypress-tourist'
+import { snap } from '@ovotech/cypress-tourist'
 
 describe('Visual Regression', () => {
   it('captures a screenshot - in existing state', () => {

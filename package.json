@@ -38,7 +38,7 @@
     "standard": "^12.0.1"
   },
   "peerDependencies": {
-    "cypress": "^3.1.0"
+    "cypress": "^3"
   },
   "dependencies": {
     "blink-diff": "^1.0.13",

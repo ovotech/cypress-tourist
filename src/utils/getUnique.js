@@ -1,4 +1,4 @@
-const { CHALLENGER, CHAMPION } = require('../names.json')
+const { CHALLENGER, CHAMPION } = require('../variables.json')
 
 const challengerChampionRegex = new RegExp(`${CHALLENGER}|${CHAMPION}`)
 
