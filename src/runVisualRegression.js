@@ -60,6 +60,8 @@ const runVisualRegression = async () => {
           ${chalk.bold(`\nOpen ${PATH_DIFF} for diff's\n`)}`
         )
       )
+
+      process.exitCode = 1
     }
 
     if (!notEmpty(failedList)) {

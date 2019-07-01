@@ -14,8 +14,9 @@ const passesVisualRegression = imageFileName => {
     imageBPath: imageFileName.replace(CHAMPION, CHALLENGER),
     imageOutputPath: imageFileName.replace(championRegex, `${DIFF}${sep}`),
     imageOutputLimit: BlinkDiff.OUTPUT_DIFFERENT,
-    thresholdType: BlinkDiff.THRESHOLD_PERCENT,
-    threshold: THRESHOLD_PERCENT
+    hideShift: true,
+    threshold: THRESHOLD_PERCENT,
+    thresholdType: BlinkDiff.THRESHOLD_PERCENT
   })
 
   return new Promise((resolve, reject) =>
