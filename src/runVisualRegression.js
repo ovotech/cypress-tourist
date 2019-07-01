@@ -8,7 +8,7 @@ const { notEmpty } = require('./utils/notEmpty')
 const { getUnique } = require('./utils/getUnique')
 const { hyphenList } = require('./utils/hyphenList')
 const { passesVisualRegression } = require('./utils/passesVisualRegression')
-const { filterFailed } = require('./utils/passesVisualRegression')
+const { filterFailed } = require('./utils/filterFailed')
 
 const { FILE_EXT, PATH_CHALLENGER, PATH_CHAMPION, PATH_DIFF } = require('./config')
 const { CHALLENGER, CHAMPION } = require('./variables.json')

@@ -1,3 +1,5 @@
 const FAILED = '(failed)'
 
-export const filterFailed = fileArray => fileArray.filter(fileName => !fileName.includes(FAILED))
+const filterFailed = fileArray => fileArray.filter(fileName => !fileName.includes(FAILED))
+
+exports.filterFailed = filterFailed
