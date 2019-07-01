@@ -123,8 +123,8 @@ Your results will be logged to the console.
 
 ## Possible gotcha's
 
-- Ensure you've stubbed out [dynamic data and fetches] - things like [times and dates].
-- Items like [Sticky headers will need to be hidden or fixed] when capturing screenshots.
+- Ensure you've stubbed out [dynamic data and fetches] and [times and dates].
+- Items such as [Sticky headers will need to be hidden or fixed] when capturing screenshots.
 
 ---
 
