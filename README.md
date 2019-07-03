@@ -41,7 +41,7 @@ Consider outputting the `diff` directory as build assets.
 Assuming you already have [cypress] installed and setup. 
 
 ```sh
-npm install --dev @ovotech/cypress-tourist
+npm install --save-dev @ovotech/cypress-tourist
 
 # Alternatively if using yarn
 yarn add dev @ovotech/cypress-tourist
@@ -159,6 +159,7 @@ npm run bump [major|minor|patch]
 - [ ] Initialize with options such as custom device viewports, or a different wait time.
 - [ ] Investigate only diffing files with a different hash.
 - [ ] Investigate parallel running.
+- [ ] Add docker container runner for screenshots to combat graphics differences.
 
 ## Contributing
 
