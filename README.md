@@ -125,6 +125,17 @@ Your results will be logged to the console.
 
 - Ensure you've stubbed out [dynamic data and fetches] and [times and dates].
 - Items such as [Sticky headers will need to be hidden or fixed] when capturing screenshots.
+- Ensure [Cypress trashes the challenger folder before it runs] - thanks [@shukii](https://github.com/shukii)
+
+    If this is an issue you can remove the challenger directory after the visual regression run
+
+    ```json
+    {
+        "scripts": {
+            "test-visual-regression": "cypress-tourist && rimraf cypress/screenshots/challenger"
+        }
+    }
+    ```
 
 ---
 
@@ -174,3 +185,4 @@ Contributions and PR's welcome.
 [semver]: https://semver.org/
 [Sticky headers will need to be hidden or fixed]: https://docs.cypress.io/api/commands/screenshot.html#Full-page-captures-and-fixed-sticky-elements
 [times and dates]: https://docs.cypress.io/api/commands/clock.html#Syntax
+[Cypress trashes the challenger folder before it runs]: https://docs.cypress.io/guides/references/configuration.html#Screenshots

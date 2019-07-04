@@ -50,3 +50,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+cypress/*
+!cypress/screenshots/champion
+!cypress/integration

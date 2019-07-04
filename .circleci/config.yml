@@ -3,10 +3,10 @@ version: 2
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: circleci/node:8.10.0
+    - image: circleci/node:10.13
 
 jobs:
-  test:
+  test-code:
     <<: *defaults  
     steps:
       - checkout
@@ -26,6 +26,21 @@ jobs:
           root: ~/repo
           paths: .
 
+  integration-test:
+    working_directory: ~/repo
+    docker:
+      - image: cypress/base:10.13
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v{{ .Environment.DEPENDENCY_CACHE_VERSION }}-dependencies-{{ checksum "package.json" }}
+          - v{{ .Environment.DEPENDENCY_CACHE_VERSION }}-dependencies-
+      - run: npm install
+      - run:
+          name: Run Integration test with Cypress
+          command: npm run test-integration
+
   deploy:
     <<: *defaults
     steps:
@@ -42,10 +57,13 @@ workflows:
   version: 2
   deploy:
     jobs:
-      - test
+      - test-code
+      - test-integration:
+          requires:
+            - test-code
       - deploy:
           requires:
-            - test
+            - test-integration
           filters:
             tags:
               only: /.*/

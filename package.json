@@ -14,6 +14,9 @@
     "bump": "sh scripts/bump.sh",
     "lint": "standard {src,bin}/**/*.js",
     "pre-commit": "npm run lint",
+    "test-integration": "cypress run",
+    "start": "micro test-server",
+    "test-visual-regression": "npm run vr",
     "vr": "node ./bin/index.js"
   },
   "types": "src/index.d.ts",
@@ -35,7 +38,9 @@
   "author": "Oliver Smit <https://github.com/olmesm>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "cypress": "^3.3.2",
     "husky": "^2.7.0",
+    "micro": "^9.3.4",
     "standard": "^12.0.1"
   },
   "peerDependencies": {
@@ -50,5 +55,11 @@
   },
   "engines": {
     "node": ">=8"
+  },
+  "standard": {
+    "env": {
+      "node": true,
+      "jest": true
+    }
   }
 }
