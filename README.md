@@ -125,6 +125,7 @@ Your results will be logged to the console.
 
 - Ensure you've stubbed out [dynamic data and fetches] and [times and dates].
 - Items such as [Sticky headers will need to be hidden or fixed] when capturing screenshots.
+- `cypress open` doesn't trash the challengers before running and so the tools should not be run during this.
 
 ---
 
