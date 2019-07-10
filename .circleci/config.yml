@@ -58,12 +58,9 @@ workflows:
   deploy:
     jobs:
       - test-code
-      - test-integration:
-          requires:
-            - test-code
       - deploy:
           requires:
-            - test-integration
+            - test-code
           filters:
             tags:
               only: /.*/
