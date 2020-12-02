@@ -50,7 +50,7 @@
     "blink-diff": "^1.0.13",
     "chalk": "^2.4.2",
     "cp-file": "^7.0.0",
-    "fast-glob": "^3.0.2",
+    "fast-glob": "^3.2.4",
     "rimraf": "^2.6.3"
   },
   "engines": {
