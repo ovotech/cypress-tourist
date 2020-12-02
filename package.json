@@ -51,7 +51,7 @@
     "chalk": "^2.4.2",
     "cp-file": "^7.0.0",
     "fast-glob": "^3.0.2",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.7.1"
   },
   "engines": {
     "node": ">=8"
